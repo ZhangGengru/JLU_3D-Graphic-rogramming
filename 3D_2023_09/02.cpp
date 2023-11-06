@@ -24,6 +24,13 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) 
 		glfwSetWindowShouldClose(window, GL_TRUE);
+	//if((key == GLFW_KEY_LEFT_SHIFT||key == GLFW_KEY_Z) && action == GLFW_PRESS)
+	bool keys[2] = { false,false };
+	keys[0] = glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS;
+	keys[1] = glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS;
+	if (keys[0] && keys[1]) {
+		glfwSetWindowShouldClose(window, GL_TRUE);
+	}
 }
 	
 //顶点着色器
@@ -74,63 +81,6 @@ void initModel()
     glBindVertexArray(0); 
 }
 
-//void rend()
-//{
-//	//顶点着色器
-//	const char* vertex_shader =
-//		"#version 330 core\n"
-//		"layout( location = 0 ) in vec3 vPosition;\n"
-//		"void main() {\n"
-//		"    gl_Position = vec4(vPosition, 1.0);\n"
-//		"}";
-//
-//	//片元着色器
-//	const char* fragment_shader =
-//		"#version 330 core\n"
-//		"out vec4 fColor;\n"
-//		"void main() {\n"
-//		"    fColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-//		"}";
-//
-//	//顶点着色器
-//	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);  
-//	glShaderSource(vertexShader, 1, &vertex_shader, NULL);   
-//	glCompileShader(vertexShader);
-//
-//	//片元着色器
-//	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-//	glShaderSource(fragmentShader, 1, &fragment_shader, NULL);
-//	glCompileShader(fragmentShader);
-//
-//	//着色器程序
-//	GLuint shaderProgram = glCreateProgram();				
-//
-//	//链接着色器
-//	glAttachShader(shaderProgram, vertexShader);			
-//	glAttachShader(shaderProgram, fragmentShader);
-//	glLinkProgram(shaderProgram);
-//	//链接检查
-//	GLint success;
-//	char infolog[512];
-//	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-//	if (!success) {
-//		glGetProgramInfoLog(shaderProgram, 512, NULL, infolog);
-//		cout << "Shader program linking failed. " << infolog << endl;
-//	}
-//
-//	//使用着色器
-//	glUseProgram(shaderProgram);
-//
-//	//删除着色器
-//	glDeleteShader(vertexShader);
-//	glDeleteShader(fragmentShader);
-//	
-//	
-//    glBindVertexArray(vaoId);	
-//	glBindBuffer(GL_ARRAY_BUFFER, vboId);	
-//
-//    glDrawArrays(GL_TRIANGLES, 0, 3);  
-//}
 int main()
 {
     glfwInit(); 
