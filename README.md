@@ -1,3 +1,2 @@
 # 3D-GraphicProgram
- 
-1111
+ 吉林大学三维图形设计
