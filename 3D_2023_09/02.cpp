@@ -28,7 +28,7 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	bool keys[2] = { false,false };
 	keys[0] = glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS;
 	keys[1] = glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS;
-	if (keys[0] && keys[1]) {
+	if ((keys[0] && keys[1])||(!keys[0]&&keys[1])) {
 		glfwSetWindowShouldClose(window, GL_TRUE);
 	}
 }
