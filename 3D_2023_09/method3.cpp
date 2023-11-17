@@ -79,14 +79,14 @@ void initModel()
 void rend()
 {
 	//创建着色器
-	//Shader shader("C:/Users/12404/Documents/GitHub/3D_2023_09/vertexShader.glsl", "C:/Users/12404/Documents/GitHub/3D_2023_09/fragmentShader.glsl");
-	Shader shader("../vertexShader.glsl", "../fragmentShader.glsl");
+	Shader shader("../vertexShader.vert", "../fragmentShader.frag");
 	//使用着色器
 	shader.use();
 
+	//使用第一个VAO中的数据绘制
 	glBindVertexArray(vaoId[0]);
-	//glDrawArrays(GL_TRIANGLES, 0, 6);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
+	//使用第二个VAO中的数据绘制
 	glBindVertexArray(vaoId[1]);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 

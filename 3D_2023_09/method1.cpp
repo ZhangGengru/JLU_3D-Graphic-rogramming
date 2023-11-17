@@ -39,27 +39,30 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 
 void initModel()
 {
+	//两个三角形的顶点
 	float vertices[] = {
+		 //第一个三角形      颜色
 		-1.0f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
 		-0.0f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
 		-0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
+		 //第二个三角形      颜色
 		 0.1f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
 		 1.0f,  0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
 		 0.1f,  0.5f, 0.0f, 0.0f, 1.0f, 0.0f
 	};
-	
+	//创建并绑定VAO
 	glGenVertexArrays(1, &vaoId);
 	glBindVertexArray(vaoId);
 
+	//创建并绑定VBO
 	glGenBuffers(1, &vboId); 
 	glBindBuffer(GL_ARRAY_BUFFER, vboId); 
-	
+	//将顶点数据复制到VBO中
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3*sizeof(float)));
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
-	
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);	//取消vbo绑定
     glBindVertexArray(0);  				//取消VAO绑定
@@ -68,15 +71,13 @@ void initModel()
 void rend()
 {
 	//创建着色器
-	//Shader shader("C:/Users/12404/Documents/GitHub/3D_2023_09/vertexShader.glsl", "C:/Users/12404/Documents/GitHub/3D_2023_09/fragmentShader.glsl");
-	Shader shader("../vertexShader.glsl", "../fragmentShader.glsl");
+	Shader shader("../vertexShader.vert", "../fragmentShader.frag");
 	//使用着色器
 	shader.use();
 
+	//使用VAO中的数据绘制
 	glBindVertexArray(vaoId);
-	//glDrawArrays(GL_TRIANGLES, 0, 6);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
-	glDrawArrays(GL_TRIANGLES, 3, 3);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	glBindVertexArray(0);
 }

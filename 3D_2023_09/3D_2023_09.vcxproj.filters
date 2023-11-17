@@ -13,11 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{055a0e91-3089-482a-8dfd-295a9465945e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="..\vertexShader.glsl">
-      <Filter>源文件</Filter>
+    <None Include="..\fragmentShader.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\vertexShader.vert">
+      <Filter>shader</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
