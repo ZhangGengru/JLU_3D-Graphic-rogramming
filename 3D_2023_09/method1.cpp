@@ -90,7 +90,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL Core", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "method 1", NULL, NULL);
     if (window == NULL)  
     {
         std::cout << "Failed to create GLFW window" << std::endl;
