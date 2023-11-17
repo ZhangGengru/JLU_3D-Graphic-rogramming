@@ -4,14 +4,16 @@
 #include <GLFW/glfw3.h>
 using namespace std;
 
-class shader
+class Shader
 {
 public:
-	shader(const char* vertexPath,const char* fragmentPath);
-	void use() { glUseProgram(ID); }
-	~shader();
+	const GLchar* ReadShader(const char* filename);
+	Shader(const GLchar* vSourcePath, const GLchar* fSourcePath);
+	void use() { glUseProgram(shaderProgram); }
+	void end_use() { glUseProgram(0); }
+	~Shader();
 private:
-	GLuint ID;
+	GLuint shaderProgram;
 	unsigned int vertex;//顶点着色器
 	unsigned int fragment;//片段着色器
 };

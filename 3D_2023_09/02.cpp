@@ -9,6 +9,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include "shader.h"
 using namespace std;
 
@@ -81,6 +83,7 @@ void initModel()
     glBindVertexArray(0); 
 }
 
+
 int main()
 {
     glfwInit(); 
@@ -118,13 +121,13 @@ int main()
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 		//rend();
-		shader myShader(vertex_shader,fragment_shader);
+		Shader myShader(vertex_shader,fragment_shader);
 		myShader.use();
 
 		glBindVertexArray(vaoId);	
 		glBindBuffer(GL_ARRAY_BUFFER, vboId);	
 		glDrawArrays(GL_TRIANGLES, 0, 3);  
-
+		
         glfwSwapBuffers(window); 
         glfwPollEvents(); 
     }

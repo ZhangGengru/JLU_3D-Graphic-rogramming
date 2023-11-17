@@ -6,10 +6,28 @@
 using namespace std;
 
 
-shader::shader(const char* vertexPath, const char* fragmentPath)
+const GLchar* Shader::ReadShader(const char* filename)
 {
-	string vertexCode(vertexPath);
-	string fragmentCode(fragmentPath);
+	FILE* infile = NULL;
+	fopen_s(&infile, filename, "rb");
+	if (!infile) {
+		std::cerr << "Unable to open file '" << filename << "'" << std::endl;
+		return NULL;
+	}
+	fseek(infile, 0, SEEK_END);
+	size_t len = ftell(infile);
+	fseek(infile, 0, SEEK_SET);
+	GLchar* source = new GLchar[len + 1];
+	fread(source, 1, len, infile);
+	fclose(infile);
+	source[len] = '\0';
+	return const_cast<const GLchar*>(source);
+}
+
+Shader::Shader(const GLchar* vSourcePath, const GLchar* fSourcePath)
+{
+	string vertexCode = ReadShader(vSourcePath);
+	string fragmentCode = ReadShader(fSourcePath);
 	
 	//shader的读入及编译
 	//转换GLchar数组
@@ -42,18 +60,18 @@ shader::shader(const char* vertexPath, const char* fragmentPath)
 	}
 
 	//shader链接
-	ID = glCreateProgram();
-	glAttachShader(ID, vertex);
-	glAttachShader(ID, fragment);
-	glLinkProgram(ID);
-	glGetProgramiv(ID, GL_LINK_STATUS, &success);
+	shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertex);
+	glAttachShader(shaderProgram, fragment);
+	glLinkProgram(shaderProgram);
+	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
 	if (!success) {
-		glGetProgramInfoLog(ID, 512, NULL, infoLog);
+		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
 		std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
 	}
 }
 
-shader::~shader()
+Shader::~Shader()
 {
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);

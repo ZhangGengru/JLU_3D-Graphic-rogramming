@@ -16,6 +16,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="..\vertexShader.glsl">
+      <Filter>源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -28,6 +31,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="method1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="method2 .cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="method3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
