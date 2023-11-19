@@ -87,7 +87,7 @@ void rend()
 	Shader shader("../vertexShader.vert", "../fragmentShader.frag");
 	//使用着色器
 	shader.use();
-
+	
 	//使用VAO中的数据绘制
 	glBindVertexArray(vaoId);
 	glDrawArrays(GL_TRIANGLES, 0, 6);

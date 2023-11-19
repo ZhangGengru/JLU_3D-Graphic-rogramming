@@ -2,6 +2,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <glm/gtc/type_ptr.hpp>
 
 using namespace std;
 
@@ -70,7 +71,49 @@ Shader::Shader(const GLchar* vSourcePath, const GLchar* fSourcePath)
 		std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
 	}
 }
+void Shader::setUniform(const GLchar* loc, float value) {
+	glUniform1f(glGetUniformLocation(shaderProgram, loc), value);
+}
 
+void Shader::setUniform(const GLchar* loc, float value1, float value2, float value3) {
+	glUniform3f(glGetUniformLocation(shaderProgram, loc), value1, value2, value3);
+}
+
+void Shader::setUniform(const GLchar* loc, float value1, float value2, float value3, float value4) {
+	glUniform4f(glGetUniformLocation(shaderProgram, loc), value1, value2, value3, value4);
+}
+
+void Shader::setUniform(const GLchar* loc, glm::mat4 value) {
+	glUniformMatrix4fv(glGetUniformLocation(shaderProgram, loc), 1, GL_FALSE, glm::value_ptr(value));
+}
+
+void Shader::setUniform(const GLchar* loc, glm::mat3 value) {
+	glUniformMatrix3fv(glGetUniformLocation(shaderProgram, loc), 1, GL_FALSE, glm::value_ptr(value));
+}
+
+void Shader::setUniform(const GLchar* loc, glm::vec2 value) {
+	glUniform3fv(glGetUniformLocation(shaderProgram, loc), 1, glm::value_ptr(value));
+}
+
+void Shader::setUniform(const GLchar* loc, glm::vec3 value) {
+	glUniform3fv(glGetUniformLocation(shaderProgram, loc), 1, glm::value_ptr(value));
+}
+
+void Shader::setUniform(const GLchar* loc, glm::vec4 value) {
+	glUniform3fv(glGetUniformLocation(shaderProgram, loc), 1, glm::value_ptr(value));
+}
+
+void Shader::setUniform(const GLchar* loc, int value) {
+	glUniform1i(glGetUniformLocation(shaderProgram, loc), value);
+}
+
+void Shader::setUniform(const char* loc, GLuint value) {
+	glUniform1ui(glGetUniformLocation(shaderProgram, loc), value);
+}
+
+void Shader::setUniform(const char* loc, bool value) {
+	glUniform1i(glGetUniformLocation(shaderProgram, loc), value);
+}
 Shader::~Shader()
 {
 	glDeleteShader(vertex);

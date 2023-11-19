@@ -36,9 +36,6 @@
     <ClCompile Include="02.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="shader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="method1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -51,10 +48,16 @@
     <ClCompile Include="作业3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="作业4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>shader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader.h">
-      <Filter>头文件</Filter>
+      <Filter>shader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
