@@ -48,6 +48,9 @@
     <ClCompile Include="method3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="作业3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader.h">
