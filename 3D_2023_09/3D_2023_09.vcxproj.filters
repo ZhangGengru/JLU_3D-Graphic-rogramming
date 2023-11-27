@@ -54,6 +54,12 @@
     <ClCompile Include="shader.cpp">
       <Filter>shader</Filter>
     </ClCompile>
+    <ClCompile Include="作业5_1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="作业5_2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader.h">

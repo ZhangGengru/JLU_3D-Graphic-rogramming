@@ -71,7 +71,7 @@ void rend()
 	glm::mat4 matrix = glm::mat4(1.0f);
 	matrix[3][0] = changeValue;
 	matrix[1][1] = -1;
-
+	//matrix = glm::rotate(matrix, glm::radians(60.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	shader.setUniform("Matrix", matrix);
 
 	//使用VAO中的数据绘制
