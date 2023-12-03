@@ -3,6 +3,7 @@ layout (location = 0) in vec3 vPos;
 layout (location = 1) in vec3 vColor;
 
 out vec3 Color;//和片源着色器的输入变量类型，变量名完全一致
+
 /////////////////////////////画雪花的矩阵
 uniform mat4 rotate_Matrix;
 uniform mat4 scale_Matrix;

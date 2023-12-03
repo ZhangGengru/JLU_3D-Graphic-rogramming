@@ -12,6 +12,7 @@ public:
 	Shader(const GLchar* vSourcePath, const GLchar* fSourcePath);
 	void use() { glUseProgram(shaderProgram); }
 	void end_use() { glUseProgram(0); }
+	GLint getshaderProgramId() { return shaderProgram; }
 	void setUniform(const GLchar* loc, float value);
 	void setUniform(const GLchar* loc, float value1, float value2, float value3);
 	void setUniform(const GLchar* loc, float value1, float value2, float value3, float value4);

@@ -1,4 +1,2 @@
-﻿  作业5_2.cpp
-C:\Users\12404\Documents\GitHub\3D_2023_09\3D_2023_09\作业5_2.cpp(99,20): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-C:\Users\12404\Documents\GitHub\3D_2023_09\3D_2023_09\作业5_2.cpp(200,17): warning C4305: “-=”: 从“double”到“float”截断
+﻿  纹理.cpp
   3D_2023_09.vcxproj -> C:\Users\12404\Documents\GitHub\3D_2023_09\x64\Debug\3D_2023_09.exe

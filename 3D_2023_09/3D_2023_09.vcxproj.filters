@@ -25,6 +25,12 @@
     <None Include="..\vertexShader.vert">
       <Filter>shader</Filter>
     </None>
+    <None Include="..\纹理作业顶点着色器.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\纹理作业片段着色器.frag">
+      <Filter>shader</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -60,10 +66,16 @@
     <ClCompile Include="作业5_2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="纹理.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader.h">
       <Filter>shader</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
