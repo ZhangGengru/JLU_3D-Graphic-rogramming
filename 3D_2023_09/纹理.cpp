@@ -66,7 +66,7 @@ void initModel()
 	else {
 		std::cout << "Failed to load texture" << std::endl;
 	}
-	stbi_image_free(data);
+	 
 
 	//顶点位置信息
 	const GLfloat vertices[] = {

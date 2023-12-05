@@ -1,2 +1,3 @@
-﻿  纹理.cpp
+﻿  绘制立方体.cpp
+C:\Users\12404\Documents\GitHub\3D_2023_09\3D_2023_09\绘制立方体.cpp(261,20): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
   3D_2023_09.vcxproj -> C:\Users\12404\Documents\GitHub\3D_2023_09\x64\Debug\3D_2023_09.exe

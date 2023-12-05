@@ -31,6 +31,18 @@
     <None Include="..\纹理作业片段着色器.frag">
       <Filter>shader</Filter>
     </None>
+    <None Include="..\绘制立方体顶点着色器.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\绘制立方体片段着色器.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\绘制背景顶点着色器.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\绘制背景片段着色器.frag">
+      <Filter>shader</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -67,6 +79,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="纹理.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="绘制立方体.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

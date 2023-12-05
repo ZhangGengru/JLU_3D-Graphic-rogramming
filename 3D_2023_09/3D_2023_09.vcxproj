@@ -139,6 +139,10 @@
     <None Include="..\vertexShader.vert" />
     <None Include="..\纹理作业片段着色器.frag" />
     <None Include="..\纹理作业顶点着色器.vert" />
+    <None Include="..\绘制立方体片段着色器.frag" />
+    <None Include="..\绘制立方体顶点着色器.vert" />
+    <None Include="..\绘制背景片段着色器.frag" />
+    <None Include="..\绘制背景顶点着色器.vert" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -180,7 +184,14 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="纹理.cpp" />
+    <ClCompile Include="纹理.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="绘制立方体.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader.h" />
