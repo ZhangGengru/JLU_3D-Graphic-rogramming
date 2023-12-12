@@ -282,7 +282,7 @@ void drawBackground(Shader& Background)
 	glm::mat4 view = glm::mat4(1.0f);
 	glm::mat4 projection = glm::mat4(1.0f);
 
-	model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f,0.0f,-15.0f));
+	model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f,0.0f,-30.0f));
 	view = glm::lookAt(glm::vec3(0.0f, 0.0f, 13.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
 
